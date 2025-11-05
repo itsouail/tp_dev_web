@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="second.css">
+  <title>Attendance Table</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .green { background-color: #c8f7c5; }
+    .yellow { background-color: #fff9b1; }
+    .red { background-color: #ffb3b3; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+  <h1>Attendance list </h1>
+  <p>This table shows attendance and participation for six sessions.</p>
+
+  <table id="attendanceTable" aria-label="Student attendance table">
+    <caption>Student Attendance List — Session 1 to Session 6</caption>
+    <thead>
+      <tr>
+        <th rowspan="2">Student ID</th>
+        <th rowspan="2">Last Name</th>
+        <th rowspan="2">First Name</th>
+        <th colspan="6">Attendance (S1–S6)</th>
+        <th colspan="6">Participation (P1–P6)</th>
+        <th rowspan="2">Message</th>
+      </tr>
+      <tr>
+        <th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>S5</th><th>S6</th>
+        <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>20251001</td>
+        <td>Ahmed</td>
+        <td>Sara</td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>20251002</td>
+        <td>Yacine</td>
+        <td>Ali</td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>20251003</td>
+        <td>Houcine</td>
+        <td>Rania</td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td class="center"><input type="checkbox"></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="container">
+    <h1>Add New Student</h1>
+
+    <form id="studentForm" action="#" method="post">
+      <label for="studentID">Student ID:</label>
+      <input type="number" id="studentID" name="studentID" placeholder="Enter student ID" required />
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required />
+
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter email" required />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p class="note">Fill out all fields, then click “Submit” to add the new student.</p>
+  </div>
+<button id="showReportBtn">Show Report</button>
+
+<section id="reportSection" style="margin-top: 20px; display: none;">
+  <h2>Attendance Report</h2>
+  <canvas id="reportChart" width="400" height="200"></canvas>
+</section>
+
+
+
+
+<script>
+</script>
+<script src="therd.js"></script>
+</body>
+</html>
